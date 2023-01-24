@@ -36,9 +36,10 @@ chrome_prefs = {}
 chrome_options.experimental_options["prefs"] = chrome_prefs
 chrome_prefs["profile.default_content_settings"] = {"images": 2}
 driver = webdriver.Chrome(options=chrome_options)
-
-    # Do stuff with your driver
-driver.close()
+driver = webdriver.Chrome()
+driver.get("python.org")
+html = driver.page_source # Getting Source of Current URL / Web-Page Loaded
+print(html)
 
     
 
